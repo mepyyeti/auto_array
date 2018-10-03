@@ -32,10 +32,11 @@ while go
 	biggest_array.push(biggest_num_and_run)
 	print "\nSUMMARY: RUN # | VAL"
 	sums_hash.each do |key,value|
-		print "\n\t   #{key} => #{value}"
+		print "\n\t   #{key} => #{value}\n"
 		end
 	#a.sort_by { |h| -h[:bar] }
 	#sort_by doesn't work!!!
+	#workaround is an array
 	biggest_array.sort!
 	print "biggest overall value: #{biggest_array[-1]} <-- run"
 	print "\ndo you want to go again? [y/n]"
