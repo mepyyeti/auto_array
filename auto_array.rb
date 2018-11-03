@@ -29,8 +29,8 @@ while go
 	some_hash[j]=some_array
 	sums_hash[j]=total_value
 	
-	#ensure j > 10 won't affect result summation
-	if j > 10
+	#ensure j > 9 won't affect result summation
+	if j > 9
 		biggest_num_and_run = biggest + (j/100.to_f)
 	else
 		biggest_num_and_run = biggest + (j/10.to_f)
