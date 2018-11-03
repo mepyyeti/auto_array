@@ -28,7 +28,14 @@ while go
 	#some_array.insert(0, total_value)
 	some_hash[j]=some_array
 	sums_hash[j]=total_value
-	biggest_num_and_run = biggest + (j/10.to_f)
+	
+	#ensure j > 10 won't affect result summation
+	if j > 10
+		biggest_num_and_run = biggest + (j/100.to_f)
+	else
+		biggest_num_and_run = biggest + (j/10.to_f)
+	end
+	
 	biggest_array.push(biggest_num_and_run)
 	print "\nSUMMARY: RUN # | VAL"
 	sums_hash.each do |key,value|
