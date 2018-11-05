@@ -65,12 +65,18 @@ while go
 		data_writer.write(sums_hash)
 		data_writer.close
 		
-		data_reader = File.open("data_file.txt")
-		
+		#{a=>b,c=>d}
+		data_reader=File.open("data_file.txt") 
 		data_reader.each do |d|
 			print d
-			end
+		end
 	else
 		print "goodbye..."
 	end
 end
+
+__END__
+File.open("data_reader.txt");data_reader.each {|d| print d.readlines}
+#["{a => b, c => d}"]
+File.open("data_reader.txt") {|d| print d.readlines}
+#["{a => b, c => d}"]
