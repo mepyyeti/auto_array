@@ -66,17 +66,20 @@ while go
 		data_writer.close
 		
 		#{a=>b,c=>d}
-		data_reader=File.open("data_file.txt") 
-		data_reader.each do |d|
-			print d
-		end
+		read_file=File.open("data_file.txt")
+		read_file.each { |r| print r}
 	else
 		print "goodbye..."
 	end
 end
 
 __END__
-File.open("data_reader.txt");data_reader.each {|d| print d.readlines}
-#["{a => b, c => d}"]
+variations on reading hashes:
 File.open("data_reader.txt") {|d| print d.readlines}
-#["{a => b, c => d}"]
+=>["{a => b, c => d}"]
+File.open("data_reader.txt") {|d| print d.readline}
+=>{a => b, c => d}
+File.open("data_reader.txt") {|d| print d}
+=><File: object in mem>
+File.open("data_reader.txt").each {|d| print d}
+=>{a => b, c => d}
